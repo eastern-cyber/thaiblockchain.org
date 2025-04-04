@@ -6,7 +6,7 @@ import artAssetIcon from "@public/ArtAsset_Logo.svg";
 import { client } from "./client";
 import { chain } from "./chain";
 import { inAppWallet } from "thirdweb/wallets";
-import Navbar from "../../components/Navbar";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (

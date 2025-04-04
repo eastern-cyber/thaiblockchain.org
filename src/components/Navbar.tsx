@@ -19,18 +19,16 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <nav className="bg-white shadow-md p-4 sticky top-0 z-50">
+    <nav className="bg-gray-800 shadow-md p-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-gray-800">
-          MySite
+        <Link href="/" className="text-[28px] font-bold text-gray-100">
+          ArtAsset.ai
         </Link>
-
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-gray-800">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <button onClick={toggleMenu} className="text-gray-100">
+            {isOpen ? <X size={24} /> : <Menu size={26} />}
           </button>
-        </div>
-
+        </div>  
         <div className={`flex-col md:flex-row md:flex gap-6 md:items-center ${isOpen ? 'flex' : 'hidden'} md:gap-8`}>
           {links.map((link) => (
             <Link
@@ -46,7 +44,7 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-        </div>
+        </div>      
       </div>
     </nav>
   )
