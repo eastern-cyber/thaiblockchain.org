@@ -7,6 +7,7 @@ import { client } from "./client";
 import { chain } from "./chain";
 import { inAppWallet } from "thirdweb/wallets";
 import Navbar from "../components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
         </div>
 
         <ThirdwebResources />
+        <Footer />
       </div>
     </main>
   );
