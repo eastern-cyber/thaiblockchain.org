@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo & Description */}
         <div>
-          <h2 className="text-2xl font-bold">ArtAsset.ai</h2>
-          <p className="mt-2 text-sm text-gray-400">
+          <h2 className="text-[26px] font-bold">ArtAsset.ai</h2>
+          <p className="mt-2 text-[18px] text-gray-300">
           Make your <b>MasterPiece</b> <br />
           a valuable <b>OnlineDigitalAsset</b>.
           </p>
@@ -16,8 +16,8 @@ export default function Footer() {
 
         {/* Navigation Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-sm text-gray-400">
+          <h3 className="text-[20px] font-semibold mb-4">Navigation</h3>
+          <ul className="space-y-2 text-[17px] text-gray-300">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/services">Services</Link></li>
@@ -27,12 +27,12 @@ export default function Footer() {
 
         {/* Social Icons */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-          <div className="flex space-x-4">
-            <a href="#" aria-label="Facebook"><Facebook className="w-6 h-6 hover:text-blue-500 pt-1" /></a>
-            <a href="#" aria-label="Instagram"><Instagram className="w-6 h-6 hover:text-pink-500 pt-1" /></a>
-            <a href="#" aria-label="YouTube Channel"><Youtube className="w-7 h-8 hover:text-red-500 pb-1" /></a>
-            <a href="#" aria-label="X (formerly Twitter)"><span className="text-xl font-bold hover:text-sky-400">X</span></a>
+          <h3 className="text-[20px] font-semibold mb-4">Follow Us</h3>
+          <div className="flex text-gray-300 space-x-4 items-center">
+            <a href="#" aria-label="Facebook"><Facebook className="w-6 h-6 hover:text-blue-500" /></a>
+            <a href="#" aria-label="X (formerly Twitter)"><span className="text-[25px] font-bold hover:text-sky-400">X</span></a>
+            <a href="#" aria-label="YouTube Channel"><Youtube className="w-8 h-8 hover:text-red-500" /></a>
+            <a href="#" aria-label="Instagram"><Instagram className="w-7 h-7 hover:text-pink-500" /></a>
           </div>
         </div>
       </div>

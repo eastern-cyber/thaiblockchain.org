@@ -17,19 +17,23 @@ export default function Home() {
         <Header />
 
         <div className="flex justify-center mb-20">
-            <div className="w-full max-w-4xl aspect-video">
-                <iframe
-                className="w-full h-full"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.801623397413!2d100.5132994!3d13.730457000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e298d951cf47e1%3A0x776af865e2cec49d!2sMANO%20Gallery%20%7C%20Lifestyle%2C%20Art%2C%20Craft!5e0!3m2!1sen!2sth!4v1743840502673!5m2!1sen!2sth"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-            </div>
+          <ConnectButton
+            client={client}
+            chain={chain}
+            // appMetadata={{
+            //   name: "Example App",
+            //   url: "https://example.com",
+            // }}
+            wallets={[ inAppWallet ({
+              auth: {
+                options: [
+                  "email",
+                  // "phone",
+                ]
+              }
+            }) ]}
+          />
         </div>
-
-
 
         <ThirdwebResources />
         <Footer />
@@ -59,14 +63,11 @@ function Header() {
       </h1>
 
       <p className="text-zinc-300 text-base">
-        <b>Located in:</b> River City Bangkok<br />
-        <b>Shop:</b> MANO Gallery | Lifestyle, Art, Craft<br />
-        <b>Address:</b> Room 180, RIVER CITY Bangkok, 23 Soi Charoen Krung 24,<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Talat Noi, Samphanthawong, Bangkok 10100<br />
-        <b>Phone:</b> 095 480 9489<br />
-        <b>Operation Hours:</b> 11:00 - 19:00 Hrs.<br />
-
+        ที่ซึ่ง{" "}
+        <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
+        งานศิลปะ
+        </code>{" "}
+        บนโลกจริงเชื่อมโยงกับโลกดิจิทัล
       </p>
     </header>
   );
