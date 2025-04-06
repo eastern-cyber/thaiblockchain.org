@@ -8,6 +8,8 @@ import { chain } from "../chain";
 import { inAppWallet } from "thirdweb/wallets";
 import Navbar from "../../components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+import ArticleCardResorces from "@/components/ArticleCardResorces";
 
 export default function Home() {
   return (
@@ -28,10 +30,7 @@ export default function Home() {
                 ></iframe>
             </div>
         </div>
-
-
-
-        <ThirdwebResources />
+        <ArticleCardResorces />
         <Footer />
       </div>
     </main>
@@ -58,59 +57,18 @@ function Header() {
         <span className="inline-block -skew-x-6 text-blue-500 text-4xl"> Academy </span>
       </h1>
 
-      <p className="text-zinc-300 text-base">
+      <p className="text-[20px] text-zinc-300 text-base leading-8">
         <b>Located in:</b> River City Bangkok<br />
         <b>Shop:</b> MANO Gallery | Lifestyle, Art, Craft<br />
         <b>Address:</b> Room 180, RIVER CITY Bangkok, 23 Soi Charoen Krung 24,<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Talat Noi, Samphanthawong, Bangkok 10100<br />
         <b>Phone:</b> 095 480 9489<br />
+        <b>Email:</b> <Link href="mailto:mano.gallery2@gmail.com" className="text-blue-400" target="_blank">mano.gallery2@gmail.com</Link><br />
+        {/* <b>EMail:</b> mano.gallery2@gmail.com<br /> */}
+        <b>Line App: </b><Link href="https://lin.ee/J4LJ3rg" className="text-blue-400" target="_blank"> https://lin.ee/J4LJ3rg</Link><br />
         <b>Operation Hours:</b> 11:00 - 19:00 Hrs.<br />
-
       </p>
     </header>
-  );
-}
-
-function ThirdwebResources() {
-  return (
-    <div className="grid gap-4 lg:grid-cols-3 justify-center">
-      <ArticleCard
-        title="thirdweb SDK Docs"
-        href="https://portal.thirdweb.com/typescript/v5"
-        description="thirdweb TypeScript SDK documentation"
-      />
-
-      <ArticleCard
-        title="Components and Hooks"
-        href="https://portal.thirdweb.com/typescript/v5/react"
-        description="Learn about the thirdweb React components and hooks in thirdweb SDK"
-      />
-
-      <ArticleCard
-        title="thirdweb Dashboard"
-        href="https://thirdweb.com/dashboard"
-        description="Deploy, configure, and manage your smart contracts from the dashboard."
-      />
-    </div>
-  );
-}
-
-function ArticleCard(props: {
-  title: string;
-  href: string;
-  description: string;
-}) {
-  return (
-    <a
-      href={props.href + "?utm_source=next-template"}
-      target="_blank"
-      className="flex flex-col border border-zinc-800 p-4 rounded-lg hover:bg-zinc-900 transition-colors hover:border-zinc-700"
-    >
-      <article>
-        <h2 className="text-lg font-semibold mb-2">{props.title}</h2>
-        <p className="text-sm text-zinc-400">{props.description}</p>
-      </article>
-    </a>
   );
 }
