@@ -18,22 +18,9 @@ export default function Home() {
         <Header />
 
         <div className="flex justify-center mb-20">
-          <ConnectButton
-            client={client}
-            chain={chain}
-            // appMetadata={{
-            //   name: "Example App",
-            //   url: "https://example.com",
-            // }}
-            wallets={[ inAppWallet ({
-              auth: {
-                options: [
-                  "email",
-                  // "phone",
-                ]
-              }
-            }) ]}
-          />
+          <p>
+            <b><u>ภาพเขียน</u></b> หลากหลายจากศิลปินชั้นนำ นำขึ้นสู่สินทรัพย์ดิจิทัล เก็บไว้ใน Crypto Wallet ในรูปแบบของ NFT เพื่อยืนยันการเป็นเจ้าของผลงานจริง
+          </p>
         </div>
 
         <ArticleCardResorces />

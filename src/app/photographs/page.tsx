@@ -18,22 +18,9 @@ export default function Home() {
         <Header />
 
         <div className="flex justify-center mb-20">
-          <ConnectButton
-            client={client}
-            chain={chain}
-            // appMetadata={{
-            //   name: "Example App",
-            //   url: "https://example.com",
-            // }}
-            wallets={[ inAppWallet ({
-              auth: {
-                options: [
-                  "email",
-                  // "phone",
-                ]
-              }
-            }) ]}
-          />
+          <p>
+          <b><u>ภาพถ่าย</u></b> จากตากล้องทั้งมืออาชีพและผู้คลั่งไคล้การถ่ายภาพเป็นงานอดิเรก สามารถนำขึ้นมาเก็บไว้บน Digital Gallery ทำทำการพิมพ์ซ้ำ ได้หลายครั้ง และใช้ NFT Token Digital เป็น Identity เพื่อแยกแยะภาพต้นฉบับและภาพ Re-Print ออกจากกันได้รวมทั้งพิสูจน์ทราบตัวตนของผู้ถือครองผลงานต้นฉบับได้ด้วย CryptoSignature
+          </p>
         </div>
 
         <ArticleCardResorces />

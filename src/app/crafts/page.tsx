@@ -18,22 +18,9 @@ export default function Home() {
         <Header />
 
         <div className="flex justify-center mb-20">
-          <ConnectButton
-            client={client}
-            chain={chain}
-            // appMetadata={{
-            //   name: "Example App",
-            //   url: "https://example.com",
-            // }}
-            wallets={[ inAppWallet ({
-              auth: {
-                options: [
-                  "email",
-                  // "phone",
-                ]
-              }
-            }) ]}
-          />
+          <p>
+          <b><u>งานฝีมือ</u></b> อันเป็นศิลปะร่วมสมัย สามารถนำมาเชื่อมโยงกับ สินทรัพย์ดิจิทัล เพื่อข่ายผ่าน NFT MarketPlace ชั้นนำของโลกอย่าง Opensea โดยไม่จำเป็นต้องมีการขนส่งเคลื่อนย้ายผลงานจริง
+          </p>
         </div>
 
         <ArticleCardResorces />
