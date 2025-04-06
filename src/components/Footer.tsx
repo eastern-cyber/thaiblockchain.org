@@ -29,10 +29,10 @@ export default function Footer() {
         <div>
           <h3 className="text-[20px] font-semibold mb-4">Follow Us</h3>
           <div className="flex text-gray-300 space-x-4 items-center">
-            <a href="#" aria-label="Facebook"><Facebook className="w-6 h-6 hover:text-blue-500" /></a>
-            <a href="#" aria-label="X (formerly Twitter)"><span className="text-[25px] font-bold hover:text-sky-400">X</span></a>
-            <a href="#" aria-label="YouTube Channel"><Youtube className="w-8 h-8 hover:text-red-500" /></a>
-            <a href="#" aria-label="Instagram"><Instagram className="w-7 h-7 hover:text-pink-500" /></a>
+            <a href="https://facebook.com/LekManoGallery/" aria-label="Facebook"><Facebook className="w-6 h-6 hover:text-blue-500" /></a>
+            <a href="https://x.com/MANOGallery/" aria-label="X (formerly Twitter)"><span className="text-[25px] font-bold hover:text-sky-400">X</span></a>
+            <a href="https://www.youtube.com/@LekMano/" aria-label="YouTube Channel"><Youtube className="w-8 h-8 hover:text-red-500" /></a>
+            <a href="https://www.instagram.com/lek_mano/" aria-label="Instagram"><Instagram className="w-7 h-7 hover:text-pink-500" /></a>
           </div>
         </div>
       </div>
