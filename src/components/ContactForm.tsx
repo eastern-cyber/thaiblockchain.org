@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
         rows={4}
       />
 
-      {success && <p className="text-green-400">Thanks! We'll be in touch soon.</p>}
+      {success && <p className="text-green-400">Thanks! We&apos;ll be in touch soon.</p>}
       {error && <p className="text-red-500">Oops! Something went wrong.</p>}
 
       <button
