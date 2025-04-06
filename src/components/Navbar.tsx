@@ -14,7 +14,7 @@ import { inAppWallet } from 'thirdweb/wallets'
 const links = [
   { name: 'Paintings', href: '/paintings' },
   { name: 'Photographs', href: '/photographs' },
-  { name: 'Drawings', href: '/drawings' },
+  { name: 'Crafts', href: '/crafts' },
   { name: 'Trade', href: 'https://opensea.io/collection/artasset-nft-drop', target:'_blank' },
 ]
 
