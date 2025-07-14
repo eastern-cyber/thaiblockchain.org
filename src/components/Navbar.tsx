@@ -15,7 +15,7 @@ const links = [
   { name: 'Paintings', href: '/paintings' },
   { name: 'Photographs', href: '/photographs' },
   { name: 'Crafts', href: '/crafts' },
-  { name: 'Trade', href: 'https://opensea.io/collection/artasset-nft-drop', target:'_blank' },
+  { name: 'Trade', href: 'https://marketplace.artasset.ai/', target:'_blank' },
 ]
 
 export default function Navbar() {
