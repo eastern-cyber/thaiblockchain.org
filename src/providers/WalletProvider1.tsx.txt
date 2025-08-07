@@ -1,0 +1,53 @@
+// src/providers/WalletProvider.tsx
+"use client";
+
+import { ReactNode } from "react";
+import {
+  RainbowKitProvider,
+  getDefaultWallets,
+  connectorsForWallets,
+} from "@rainbow-me/rainbowkit";
+import {
+  metaMaskWallet,
+  trustWallet,
+  coinbaseWallet,
+  rainbowWallet,
+  phantomWallet,
+} from "@rainbow-me/rainbowkit/wallets";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { mainnet, polygon, optimism, arbitrum, base } from "wagmi/chains";
+import { publicProvider } from "wagmi/providers/public";
+
+const { chains, publicClient } = configureChains(
+  [mainnet, polygon, optimism, arbitrum, base],
+  [publicProvider()]
+);
+
+const projectId = "b61409ebf9908f8159d0e4e62d9b598f"; // Get from WalletConnect Cloud
+
+const connectors = connectorsForWallets([
+  {
+    groupName: "Recommended",
+    wallets: [
+      metaMaskWallet({ projectId, chains }),
+      trustWallet({ projectId, chains }),
+      coinbaseWallet({ appName: "My App", chains }),
+      rainbowWallet({ projectId, chains }),
+      phantomWallet({ chains }),
+    ],
+  },
+]);
+
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors,
+  publicClient,
+});
+
+export function WalletProvider({ children }: { children: ReactNode }) {
+  return (
+    <WagmiConfig config={wagmiConfig}>
+      <RainbowKitProvider chains={chains}>{children}</RainbowKitProvider>
+    </WagmiConfig>
+  );
+}

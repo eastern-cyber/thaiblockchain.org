@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ConnectButton } from "thirdweb/react";
-import artAssetIcon from "@public/ArtAsset_Logo.svg";
+import tbaIcon from "@public/TBA_Logo.svg";
 import { client } from "./client";
 import { chain } from "./chain";
 import { inAppWallet } from "thirdweb/wallets";
@@ -47,30 +47,32 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="flex flex-col items-center mb-20 md:mb-20">
+    <header className="flex flex-col items-center mb- md:mb-20">
       <Image
-        src={artAssetIcon}
+        src={tbaIcon}
         alt=""
-        className="mb-6 size-[150px] md:size-[150px]"
+        className="mb-6 size-[200px] md:size-[200px]"
         style={{
           filter: "drop-shadow(0px 0px 24px #a726a9a8)",
         }}
       />
 
-      <h1 className="justify-items-center text-xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-6 text-zinc-100">
-        ArtAsset.ai{" "}
+      <h1 className="justify-items-center text-xl md:text-4xl font-semibold md:font-bold tracking-tighter mb-6 text-zinc-100">
+        Thai Blockchain Association{" "}
         <p></p>
-        <span className="inline-block -skew-x-6 text-4xl text-blue-500"> Studio </span>
-        <span className="text-zinc-300 inline-block mx-1 text-4xl"> and </span>
-        <span className="inline-block -skew-x-6 text-blue-500 text-4xl"> Academy </span>
+        <p className="justfy-items-center">
+        <span className="inline-block -skew-x-6 text-3xl text-blue-500"> www.</span>
+        <span className="text-zinc-300 inline-block mx-1 text-3xl">ThaiBlockchain</span>
+        <span className="inline-block -skew-x-6 text-blue-500 text-3xl">.org</span>
+        </p>
       </h1>
 
-      <p className="text-zinc-300 text-base">
-        ที่ซึ่ง{" "}
+      <p className="text-zinc-300 text-base text-l">
+        สมาคมไทยบล็อกเชน{" "}
         <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
-        งานศิลปะ
+        เพื่อส่งเสริม
         </code>{" "}
-        บนโลกจริงเชื่อมโยงกับโลกดิจิทัล
+        การนำเทคโนโลยีบล็อกเชนไปใช้ให้เกิดประโยชน์
       </p>
     </header>
   );

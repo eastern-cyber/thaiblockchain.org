@@ -5,11 +5,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import artAssetIcon from "@public/ArtAsset_Logo.svg";
+import tbaIcon from "@public/TBA_Logo.svg";
 import { ConnectButton } from 'thirdweb/react'
 import { client } from '@/app/client'
 import { chain } from '@/app/chain'
 import { inAppWallet } from 'thirdweb/wallets'
+import { WalletConnectButton } from "@/components/ConnectButton";
 
 const links = [
   { name: 'Paintings', href: '/paintings' },
@@ -27,36 +28,21 @@ export default function Navbar() {
   return (
     <nav className="bg-[#131313] shadow-md p-4 mb-6 sticky top-0 z-50">
       <div className="flex items-center gap-2">
-        <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
+        <div className="max-w-7xl mx-auto flex-col justify-between items-center w-full">
           <Link href="/" className="flex justify-left items-center gap-2 text-[#eee]">
             <Image
-              src={artAssetIcon}
+              src={tbaIcon}
               alt=""
-              className="size-[60px]"
+              className="size-[80px] md:size-[120px]"
               style={{
                 filter: "drop-shadow(0px 0px 24px #a726a9a8)",
               }}
             />
-            <span className="ml-2 text-[24px] font-bold">ArtAsset.ai</span>
+            <p className="ml-2 text-[16px] md:text-[24px] font-bold">ThaiBlockchain.org</p>
           </Link>
         </div>
         <div className="hidden md:block">
-          <ConnectButton
-            client={client}
-            chain={chain}
-            // appMetadata={{
-            //   name: "Example App",
-            //   url: "https://example.com",
-            // }}
-            wallets={[ inAppWallet ({
-              auth: {
-                options: [
-                  "email",
-                  // "phone",
-                ]
-              }
-            }) ]}
-          />
+          <WalletConnectButton />
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-100">
@@ -96,54 +82,10 @@ export default function Navbar() {
             </Link>
           );
         })}
-
-        {/* <ul>
-          {links.map((link) => (
-            link.target === '_blank' ? (
-              <li key={link.name}>
-                <a href={link.href} target="_blank" rel="noopener noreferrer">
-                  {link.name}
-                </a>
-              </li>
-            ) : (
-              <li key={link.name}>
-                <Link href={link.href}>{link.name}</Link>
-              </li>
-            )
-          ))}
-        </ul> */}
-          {/* {links.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`block py-2 text-lg ${
-                pathname === link.href
-                  ? 'text-blue-200 font-semibold'
-                  : 'text-gray-100 hover:text-yellow-400'
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))} */}
+          
         </div>
         <div className="ml-16 mt-6 md:hidden">
-          <ConnectButton
-            client={client}
-            chain={chain}
-            // appMetadata={{
-            //   name: "Example App",
-            //   url: "https://example.com",
-            // }}
-            wallets={[ inAppWallet ({
-              auth: {
-                options: [
-                  "email",
-                  // "phone",
-                ]
-              }
-            }) ]}
-          />
+          <WalletConnectButton />
         </div>
       </div>  
     </nav>
