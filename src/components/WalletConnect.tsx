@@ -9,7 +9,7 @@ import { inAppWallet, createWallet } from "thirdweb/wallets";
 const WalletConnect: React.FC = () => {
     return (
         <div className="flex justify-center m-5">
-            <ConnectButton 
+            <ConnectButton
                 locale={"en_US"} 
                 client={client}
                 chain={chain}
@@ -24,29 +24,12 @@ const WalletConnect: React.FC = () => {
                 connectButton={{ label: "ล็อกอิน" }}
                 connectModal={{
                     title: "เชื่อมต่อกระเป๋า",
-                    titleIcon: "https://dfi.fund/_next/static/media/DFastLogo_650x600.4f2ec315.svg",
-                    size: "auto", // Changed to "auto" for better responsiveness
+                    titleIcon:
+                    "https://dfi.fund/_next/static/media/DFastLogo_650x600.4f2ec315.svg",
+                    size: "compact",
                     welcomeScreen: {
-                        title: "เลือกวิธีการเชื่อมต่อ",
-                        subtitle: "เลือกกระเป๋าสตางค์ดิจิทัลของคุณ",
-                    },
-                    modalWrapperStyles: {
-                        // Responsive modal width
-                        base: {
-                            width: "90vw",
-                            maxWidth: "400px",
-                        },
-                        mobile: {
-                            width: "95vw",
-                            maxWidth: "none",
-                        },
-                    },
-                    walletListStyles: {
-                        // Stack wallets vertically on mobile
-                        mobile: {
-                            gridTemplateColumns: "1fr",
-                            gap: "12px",
-                        },
+                    title: "เลือกวิธีการเชื่อมต่อ",
+                    subtitle: "เลือกกระเป๋าสตางค์ดิจิทัลของคุณ",
                     },
                 }}
                 supportedTokens={{
@@ -93,7 +76,49 @@ const WalletConnect: React.FC = () => {
                         connectedButtonBgHover: "hsl(241, 50%, 17%)"
                     },
                 })}
-            />
+            />;
+
+            {/* <ConnectButton 
+                locale={"en_US"} 
+                client={client}
+                chain={chain}
+                wallets={[
+                    inAppWallet({
+                        auth: {
+                            options: ["email"]
+                        }
+                    }), 
+                    createWallet("io.metamask")
+                ]}
+                connectButton={{ label: "ล็อกอิน" }}
+                connectModal={{
+                    title: "เชื่อมต่อกระเป๋า",
+                    titleIcon: "https://dfi.fund/_next/static/media/DFastLogo_650x600.4f2ec315.svg",
+                    size: "compact", // Changed to "auto" for better responsiveness
+                    welcomeScreen: {
+                        title: "เลือกวิธีการเชื่อมต่อ",
+                        subtitle: "เลือกกระเป๋าสตางค์ดิจิทัลของคุณ",
+                    },
+                    modalWrapperStyles: {
+                        // Responsive modal width
+                        base: {
+                            width: "90vw",
+                            maxWidth: "400px",
+                        },
+                        mobile: {
+                            width: "95vw",
+                            maxWidth: "none",
+                        },
+                    },
+                    walletListStyles: {
+                        // Stack wallets vertically on mobile
+                        mobile: {
+                            gridTemplateColumns: "1fr",
+                            gap: "12px",
+                        },
+                    },
+                }}
+            /> */}
         </div>
     );
 };
