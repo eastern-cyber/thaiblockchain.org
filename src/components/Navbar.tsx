@@ -11,6 +11,7 @@ import { client } from '@/app/client'
 import { chain } from '@/app/chain'
 import { inAppWallet } from 'thirdweb/wallets'
 import { WalletConnectButton } from "@/components/ConnectButton";
+import WalletConnect from "@/components/WalletConnect";
 
 const links = [
   { name: 'Paintings', href: '/paintings' },
@@ -42,7 +43,8 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="hidden md:block">
-          <WalletConnectButton />
+          {/* <WalletConnectButton /> */}
+          <WalletConnect />
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-100">
