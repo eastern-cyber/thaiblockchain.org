@@ -5,12 +5,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import tbaIcon from "@public/TBA_Logo.svg";
+import artAssetIcon from "@public/ArtAsset_Logo.svg";
 import { ConnectButton } from 'thirdweb/react'
 import { client } from '@/app/client'
 import { chain } from '@/app/chain'
 import { inAppWallet } from 'thirdweb/wallets'
-import { WalletConnectButton } from "@/components/ConnectButton";
 import WalletConnect from "@/components/WalletConnect";
 
 const links = [
@@ -29,22 +28,36 @@ export default function Navbar() {
   return (
     <nav className="bg-[#131313] shadow-md p-4 mb-6 sticky top-0 z-50">
       <div className="flex items-center gap-2">
-        <div className="max-w-7xl mx-auto flex-col justify-between items-center w-full">
+        <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
           <Link href="/" className="flex justify-left items-center gap-2 text-[#eee]">
             <Image
-              src={tbaIcon}
+              src={artAssetIcon}
               alt=""
-              className="size-[80px] md:size-[120px]"
+              className="size-[60px]"
               style={{
                 filter: "drop-shadow(0px 0px 24px #a726a9a8)",
               }}
             />
-            <p className="ml-2 text-[16px] md:text-[24px] font-bold">ThaiBlockchain.org</p>
+            <span className="ml-2 text-[24px] font-bold">ArtAsset.ai</span>
           </Link>
         </div>
         <div className="hidden md:block">
-          {/* <WalletConnectButton /> */}
-          <WalletConnect />
+          <ConnectButton
+            client={client}
+            chain={chain}
+            // appMetadata={{
+            //   name: "Example App",
+            //   url: "https://example.com",
+            // }}
+            wallets={[ inAppWallet ({
+              auth: {
+                options: [
+                  "email",
+                  // "phone",
+                ]
+              }
+            }) ]}
+          />
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-100">
@@ -84,10 +97,10 @@ export default function Navbar() {
             </Link>
           );
         })}
-          
+
         </div>
         <div className="ml-16 mt-6 md:hidden">
-          <WalletConnectButton />
+          <WalletConnect />
         </div>
       </div>  
     </nav>
